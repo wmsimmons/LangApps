@@ -13,11 +13,11 @@ new_letters = letter_to_letter.str2tuple()
 
 def transliterate(text):
 	sanna_latined_words = []
-	[letter[1] for letter in new_letters]
+	new_letter = [letter[1] for letter in new_letters]
 	for word in text:
 		for letter in word:
-			#change the letter(the key) to the "value" of the tuple new_letters and add it to sanna_latined_letters
+			#change the letter(the key) to the new_letter of the new_letters and add it to sanna_latined_letters
 			if letter in letter_to_letter:
-				#need to replace the letter to the latin one, re.sub() or something like is needed.
+				#need to replace the letter(key in new_letters tuple) to the latin one, re.sub() or something like is needed.
 				letter.
 		sanna_latined_words.append(word)
