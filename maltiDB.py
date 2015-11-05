@@ -1,33 +1,35 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import os, sys
 import pymongo
 from pymongo import MongoClient
-from pymongo import Connection
 
-coding=utf-8
+# coding= utf8
 
-class maltiDB:
-    #connect to pymongo
-    client = MongoClient("localhost", 27017)
-    db = client.maltiVerbConjugator
 
-    verbs = []
+#connect to pymongo
+client = MongoClient("localhost", 27017)
+db = client.maltiVerbConjugator
 
+verbs = []
+
+connection = MongoClient
+connection = MongoClient()
+db = connection.maltiVerbConjugator
+maltiverb_db = db.maltiVerbConjugator
+
+# #asks for which verb, tense and subject you want
+# verb_selector = input("Insert desired verb")
+# verb_tense_selector = input("Insert which tense")
+# desired_pronoun = input("Insert which subject you want")
+
+def connect_maltidb():
+    """connects to the maltiVerbConjugator database"""
     connection = MongoClient
     connection = MongoClient()
     db = connection.maltiVerbConjugator
     maltiverb_db = db.maltiVerbConjugator
 
-    # #asks for which verb, tense and subject you want
-    # verb_selector = input("Insert desired verb")
-    # verb_tense_selector = input("Insert which tense")
-    # desired_pronoun = input("Insert which subject you want")
-
-    def connect_maltidb():
-        """connects to the maltiVerbConjugator database"""
-        connection = MongoClient
-        connection = MongoClient()
-        db = connection.maltiVerbConjugator
-        maltiverb_db = db.maltiVerbConjugator
-    
 
 #attach the maltiVerbConjugator database to the content of verbs verb_selector
 #logic for whether tense is past or present past on user raw_input verb_tense_selector
@@ -39,84 +41,84 @@ class maltiDB:
 
 
 
- #how to structure mongo collection to work with verb tenses,
- #pronouns and verb roots
+#how to structure mongo collection to work with verb tenses,
+#pronouns and verb roots
+
+
+"""Feed the root of the verb, and function will ask you for each form of the verb
+from the first person singular and plurals to imperative forms and inserts the results
+as a document in the database"""
+
+def verb_insert(root):
+	#singular forms
+    first_sing_present = input("Type the first person singular form: ")
+    second_sing_present = input("Type the second person singular form: ")
+    third_sing_he_present = input("Type the third person singular form for 'he': ")
+    third_sing_she_present = input("Type the third person singular form for 'she': ")
+
+    first_plural_present = input("Type the first person plural present form: ")
+    second_plural_present = input("Type the first person plural present form: ")
+    third_plural_present = input("Type the first person singular present form: ")
+
+    #plural forms
+    first_sing_past = input("Type the first person singular past form: ")
+    second_sing_past = input("Type the first person singular past form: ")
+    third_sing_he_past = input("Type the first person singular past form for 'he': ")
+    third_sing_she_past = input("Type the first person singular past form for 'she': ")
+
+    first_plural_past = input("Type the first person plural past form: ")
+    second_plural_past = input("Type the first person plural past form: ")
+    third_plural_past = input("Type the first person plural past form: ")
+
+    #imperative command forms
+    imperative_sing = input("Type the imperative singular form: ")
+    imperative_plural = input("Type the imperative plural form: ")
     
+    #how to structure mongo collection to work with verb tenses,
+    #pronouns and verb roots
+    verb_conj = {
+    "_id": '"' + root + '"',
+    "verbRoot": '"' + root + '"',
+    "verbForms":{
+    "presentFutureForms": {
+        "singularForms": {
+            "jiena": '"' + first_sing_present + '"',
+            "int": '"' + second_sing_present + '"',
+            "hu_huwa": '"' + third_sing_he_present + '"',
+            "hi_hija": '"' + third_sing_she_present + '"'
+    },
+        "pluralForms": {
+            "aħna": '"' + first_plural_present + '"',
+            "intom": '"' + second_plural_present + '"',
+            "huma": '"' + third_plural_present + '"'
+        }},
+    "pastTenseForms": {
     
-    """Feed the root of the verb, and function will ask you for each form of the verb
-   from the first person singular and plurals to imperative forms and inserts the results
-   as a document in the database"""
-
-    def verb_insert(root):
-        #singular forms
-        first_sing_present = input("Type the first person singular form: ")
-        second_sing_present = input("Type the second person singular form: ")
-        third_sing_he_present = input("Type the third person singular form for 'he': ")
-        third_sing_she_present = input("Type the third person singular form for 'she': ")
-
-        first_plural_present = input("Type the first person plural present form: ")
-        second_plural_present = input("Type the first person plural present form: ")
-        third_plural_present = input("Type the first person singular present form: ")
-
-        #plural forms
-        first_sing_past = input("Type the first person singular past form: ")
-        second_sing_past = input("Type the first person singular past form: ")
-        third_sing_he_past = input("Type the first person singular past form for 'he': ")
-        third_sing_she_past = input("Type the first person singular past form for 'she': ")
-
-        first_plural_past = input("Type the first person plural past form: ")
-        second_plural_past = input("Type the first person plural past form: ")
-        third_plural_past = input("Type the first person plural past form: ")
-
-        #imperative command forms
-        imperative_sing = input("Type the imperative singular form: ")
-        imperative_plural = input("Type the imperative plural form: ")
-        
-        #how to structure mongo collection to work with verb tenses,
-        #pronouns and verb roots
-        verb_conj = {
-        "_id": '"' + root + '"',
-        "verbRoot": '"' + root + '"',
-        "verbForms":{
-        "presentFutureForms": {
-            "singularForms": {
-                "jiena": '"' + first_sing_present + '"',
-                "int": '"' + second_sing_present + '"',
-                "hu_huwa": '"' + third_sing_he_present + '"',
-                "hi_hija": '"' + third_sing_she_present + '"'
+        "singularForms": {
+            "jiena": '"' + first_sing_past + '"',
+            "int": '"' + second_sing_past + '"',
+            "hu_huwa": '"' + third_sing_he_past + '"',
+            "hi_hija": '"' +  third_sing_she_past + '"'
         },
             "pluralForms": {
-                "aħna": '"' + first_plural_present + '"',
-                "intom": '"' + second_plural_present + '"',
-                "huma": '"' + third_plural_present + '"'
-            }},
-        "pastTenseForms": {
-        
-            "singularForms": {
-                "jiena": '"' + first_sing_past + '"',
-                "int": '"' + second_sing_past + '"',
-                "hu_huwa": '"' + third_sing_he_past + '"',
-                "hi_hija": '"' +  third_sing_she_past + '"'
-            },
-                "pluralForms": {
-                "aħna": '"' + first_plural_past + '"',
-                "intom": '"' + second_plural_past + '"',
-                "huma": '"' + third_plural_past + '"'
-            }},
-            "imperativeForms": {
-                "singular": '"' + imperative_sing + '"',
-                "plural": '"' + imperative_plural + '"'
-                } 
-               }};
+            "aħna": '"' + first_plural_past + '"',
+            "intom": '"' + second_plural_past + '"',
+            "huma": '"' + third_plural_past + '"'
+        }},
+        "imperativeForms": {
+            "singular": '"' + imperative_sing + '"',
+            "plural": '"' + imperative_plural + '"'
+            } 
+           }};
 
-        #logic that inserts "null" in an entry if the input entered is blank
-        
-        print(verb_conj)
-        confirmation = input("Are you sure this verb" + '"' + root + '"' +  "is conjugated correctly? ")
-        if confirmation == 'Y' or 'Yes':
-            #inserts the document and prints the result
-            inserted_entry = maltiDB.maltiverb_db.insert_one(verb_conj)
-            return inserted_entry
-        elif confirmation == 'N' or 'No':
-            break
-        
+    #logic that inserts "null" in an entry if the input entered is blank
+    
+    print(verb_conj)
+    confirmation = input("Are you sure this verb" + ' "' + root + ' "' +  "is conjugated correctly? Write 'yes' or 'y' to confirm.")
+    if confirmation == 'yes' or 'y':
+        #inserts the document and prints the result
+        inserted_entry = maltiDB.maltiverb_db.insert_one(verb_conj)
+        return inserted_entry
+    elif confirmation == 'N' or 'No':
+        pass
+    
