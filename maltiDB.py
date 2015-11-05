@@ -13,10 +13,9 @@ db = client.maltiVerbConjugator
 
 verbs = []
 
-connection = MongoClient
-connection = MongoClient()
-db = connection.maltiVerbConjugator
-maltiverb_db = db.maltiVerbConjugator
+#connection = MongoClient
+#connection = MongoClient()
+#db = connection.maltiVerbConjugator
 
 # #asks for which verb, tense and subject you want
 # verb_selector = input("Insert desired verb")
@@ -29,6 +28,7 @@ def connect_maltidb():
     connection = MongoClient()
     db = connection.maltiVerbConjugator
     maltiverb_db = db.maltiVerbConjugator
+    return maltiverb_db
 
 
 #attach the maltiVerbConjugator database to the content of verbs verb_selector
@@ -114,10 +114,11 @@ def verb_insert(root):
     #logic that inserts "null" in an entry if the input entered is blank
     
     print(verb_conj)
-    confirmation = input("Are you sure this verb" + ' "' + root + ' "' +  "is conjugated correctly? Write 'yes' or 'y' to confirm.")
+    confirmation = input("Are you sure this verb" + ' "' + root + ' "' +  "is conjugated correctly? Write 'yes' or 'y' to confirm. ")
     if confirmation == 'yes' or 'y':
         #inserts the document and prints the result
-        inserted_entry = maltiDB.maltiverb_db.insert_one(verb_conj)
+        maltidb = connect_maltidb()
+        inserted_entry = maltidb.insert_one(verb_conj)
         return inserted_entry
     elif confirmation == 'N' or 'No':
         pass
