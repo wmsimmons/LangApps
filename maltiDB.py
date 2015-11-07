@@ -114,12 +114,12 @@ def verb_insert(root):
     #logic that inserts "null" in an entry if the input entered is blank
     
     print(verb_conj)
-    confirmation = input("Are you sure this verb" + ' "' + root + ' "' +  "is conjugated correctly? Write 'yes' or 'y' to confirm. ")
+    confirmation = input("Are you sure this verb" + ' "' + root + '"' +  "is conjugated correctly? Write 'yes' or 'y' to confirm. ")
     if confirmation == 'yes' or 'y':
         #inserts the document and prints the result
         maltidb = connect_maltidb()
         inserted_entry = maltidb.insert_one(verb_conj)
         return inserted_entry
-    elif confirmation == 'N' or 'No':
+    elif confirmation == 'n' or 'no':
         pass
     
