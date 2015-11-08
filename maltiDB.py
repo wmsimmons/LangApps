@@ -77,44 +77,44 @@ def verb_insert(root):
     #how to structure mongo collection to work with verb tenses,
     #pronouns and verb roots
     verb_conj = {
-    "_id": '"' + root + '"',
-    "verbRoot": '"' + root + '"',
+    "_id":  root, 
+    "verbRoot": root,
     "verbForms":{
     "presentFutureForms": {
         "singularForms": {
-            "jiena": '"' + first_sing_present + '"',
-            "int": '"' + second_sing_present + '"',
-            "hu_huwa": '"' + third_sing_he_present + '"',
-            "hi_hija": '"' + third_sing_she_present + '"'
+            "jiena":  first_sing_present ,
+            "int": second_sing_present,
+            "hu_huwa":  third_sing_he_present,
+            "hi_hija":  third_sing_she_present 
     },
         "pluralForms": {
-            "aħna": '"' + first_plural_present + '"',
-            "intom": '"' + second_plural_present + '"',
-            "huma": '"' + third_plural_present + '"'
+            "aħna": first_plural_present,
+            "intom": second_plural_present,
+            "huma": third_plural_present
         }},
     "pastTenseForms": {
     
         "singularForms": {
-            "jiena": '"' + first_sing_past + '"',
-            "int": '"' + second_sing_past + '"',
-            "hu_huwa": '"' + third_sing_he_past + '"',
-            "hi_hija": '"' +  third_sing_she_past + '"'
+            "jiena": first_sing_past,
+            "int": second_sing_past,
+            "hu_huwa": third_sing_he_past,
+            "hi_hija": third_sing_she_past 
         },
             "pluralForms": {
-            "aħna": '"' + first_plural_past + '"',
-            "intom": '"' + second_plural_past + '"',
-            "huma": '"' + third_plural_past + '"'
+            "aħna": first_plural_past,
+            "intom": second_plural_past,
+            "huma": third_plural_past
         }},
-        "imperativeForms": {
-            "singular": '"' + imperative_sing + '"',
-            "plural": '"' + imperative_plural + '"'
+    "imperativeForms": {
+            "singular": imperative_sing,
+            "plural": imperative_plural 
             } 
            }};
 
     #logic that inserts "null" in an entry if the input entered is blank
     
     print(verb_conj)
-    confirmation = input("Are you sure this verb" + ' "' + root + ' "' +  "is conjugated correctly? Write 'yes' or 'y' to confirm. ")
+    confirmation = input("Are you sure this verb" + ' + root + ' +  "is conjugated correctly? Write 'yes' or 'y' to confirm. ")
     if confirmation == 'yes' or 'y':
         #inserts the document and prints the result
         maltidb = connect_maltidb()
@@ -123,3 +123,14 @@ def verb_insert(root):
     elif confirmation == 'N' or 'No':
         pass
     
+def verb_delete(root):
+    maltidb = connect_maltidb()
+    entry = maltidb.find({"id_": root})
+    print(entry)
+    confirmation = print("Are you sure that you want to delete this document? Type 'yes' or 'no' to confirm: ")
+    if confirmation == 'yes' or 'y':
+        #removes entry from db and returns what was deleted
+        deleted_entry = maltidb.remove(entry)
+        return deleted_entry
+    elif confirmation == 'no' or 'n':
+        break
