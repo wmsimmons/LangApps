@@ -82,7 +82,7 @@ def verb_insert(root):
     "verbForms":{
     "presentFutureForms": {
         "singularForms": {
-            "jiena":  first_sing_present ,
+            "jiena":  first_sing_present,
             "int": second_sing_present,
             "hu_huwa":  third_sing_he_present,
             "hi_hija":  third_sing_she_present 
@@ -120,7 +120,7 @@ def verb_insert(root):
         maltidb = connect_maltidb()
         inserted_entry = maltidb.insert_one(verb_conj)
         return inserted_entry
-    elif confirmation == 'N' or 'No':
+    elif confirmation == 'n' or 'no':
         pass
     
 def verb_delete(root):
