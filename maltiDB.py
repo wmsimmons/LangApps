@@ -125,12 +125,14 @@ def verb_insert(root):
     
 def verb_delete(root):
     maltidb = connect_maltidb()
-    entry = maltidb.find({"id_": root})
-    print(entry)
+    entry = maltidb.find({"_id": root})
+    for rootform in entry:
+        print(rootform)
+
     confirmation = input("Are you sure that you want to delete this document? Type 'yes' or 'no' to confirm: ")
     if confirmation == 'yes' or 'y':
         #removes entry from db and returns what was deleted
-        deleted_entry = maltidb.remove(entry)
+        deleted_entry = maltidb.remove(rootform)
         return deleted_entry
     elif confirmation == 'no' or 'n':
         pass
