@@ -49,26 +49,26 @@ def connect_maltidb():
 from the first person singular and plurals to imperative forms and inserts the results
 as a document in the database"""
 
-def verb_insert(root):
-	#singular forms
+def vinsert(root):
+	#present forms
     first_sing_present = input("Type the first person singular form: ")
     second_sing_present = input("Type the second person singular form: ")
     third_sing_he_present = input("Type the third person singular form for 'he': ")
     third_sing_she_present = input("Type the third person singular form for 'she': ")
 
     first_plural_present = input("Type the first person plural present form: ")
-    second_plural_present = input("Type the first person plural present form: ")
-    third_plural_present = input("Type the first person singular present form: ")
+    second_plural_present = input("Type the second person plural present form: ")
+    third_plural_present = input("Type the third person plural present form: ")
 
-    #plural forms
+    #past forms
     first_sing_past = input("Type the first person singular past form: ")
-    second_sing_past = input("Type the first person singular past form: ")
-    third_sing_he_past = input("Type the first person singular past form for 'he': ")
-    third_sing_she_past = input("Type the first person singular past form for 'she': ")
+    second_sing_past = input("Type the second person singular past form: ")
+    third_sing_he_past = input("Type the third person singular past form for 'he': ")
+    third_sing_she_past = input("Type the third person singular past form for 'she': ")
 
     first_plural_past = input("Type the first person plural past form: ")
-    second_plural_past = input("Type the first person plural past form: ")
-    third_plural_past = input("Type the first person plural past form: ")
+    second_plural_past = input("Type the second person plural past form: ")
+    third_plural_past = input("Type the third person plural past form: ")
 
     #imperative command forms
     imperative_sing = input("Type the imperative singular form: ")
@@ -123,16 +123,18 @@ def verb_insert(root):
     elif confirmation == 'n' or 'no':
         pass
     
-def verb_delete(root):
+def vdel(root):
     maltidb = connect_maltidb()
-    entry = maltidb.find({"_id": root})
-    for rootform in entry:
+    findEntry = maltidb.find({"_id": root})
+    entry = {"_id": root}
+    for rootform in findEntry:
         print(rootform)
 
-    confirmation = input("Are you sure that you want to delete this document? Type 'yes' or 'no' to confirm: ")
-    if confirmation == 'yes' or 'y':
-        #removes entry from db and returns what was deleted
-        deleted_entry = maltidb.remove(rootform)
-        return deleted_entry
-    elif confirmation == 'no' or 'n':
-        pass
+        confirmation = input("Are you sure that you want to delete this document? Type 'yes' or 'no' to confirm: ")
+        if confirmation == 'yes' or 'y':
+            #removes entry from db and returns what was deleted
+            delResult = maltidb.delete_one(entry)
+            print(delResult.deleted_count)
+            return delResult
+        elif confirmation == 'no' or 'n':
+            pass
