@@ -2,7 +2,7 @@ import nltk
 from nltk.corpus import PlaintextCorpusReader
 
 def load_corpus():
-	corpus_root = '/home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/ilsien_sannaja/training_data/'
+	corpus_root = '/home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/maltese_training_data/'
 	wordlists = PlaintextCorpusReader(corpus_root, '.*')
 	print(wordlists.fileids())
 	return wordlists
