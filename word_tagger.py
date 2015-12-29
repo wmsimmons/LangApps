@@ -27,15 +27,14 @@ def annotator(text):
 
 	nameOfFile = raw_input("Which file is this to be placed in? ")
 
-	filename  = open(nameOfFile + '.txt','w')
-	sys.stdout = filename
-	sys.stdout annotatedText
+	filename = open('C:/Users/wkeil/Desktop/qafastamalti/qafasTaMalti/hawaiianCorpus/' + nameOfFile + '.txt','a')
+	filename.write(annotatedText)
 
+	print(filename)
 	return annotatedText
 
 	"take the input from the user and add a '/' between the pos and the word"
 
 	"""punctuation may be a problem, how to deal with seperating words from punctuation
 	and tag them as a punc mark"""
-
 
