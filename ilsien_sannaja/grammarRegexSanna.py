@@ -22,7 +22,16 @@ def cmaPresVerb(text):
 	"""To find possible present and progressive verbs"""
 	allVerbs = []
 
-	matches = re.findall(r'\bpk[a-zA-Z]+', text, re.I)
+	matches = re.findall(r'\b\spi[a-zA-Z]+|\spk[a-zA-Z]+', text, re.I)
 	for match in matches:
 		allVerbs.append(match)
 	return allVerbs
+
+def cmaPronoun(text):
+	"""To search for any pronouns in a CMA text"""
+	pronouns = []
+
+	matches = re.findall(r'\bana|\sint|\snaxni|\sintou|\sinti|\sinnen|\souo|\sie', text, re.I)
+	for match in matches:
+		pronouns.append(match)
+	return pronouns
