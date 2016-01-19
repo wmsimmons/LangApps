@@ -10,12 +10,15 @@ def load_corpus():
 #wordlists.words(any_work)
 
 def open_mt_file(filename):
-	f = open('/home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/' + filename
+	f = open('C:/Users/wkeil/Desktop/qafastamalti/qafasTaMalti/ilsien_sannaja/' + filename
 	 + '.txt', 'r')
 	text = f.read().decode('utf-8')
+	tokens = word_tokenize(text)
+	words = [w.lower() for w in tokens]
+	vocab = sorted(set(words))
 	#text1 = text.split()
-	abstracts = nltk.Text(text1) #attach NLTK func
-	return abstracts
+	#abstracts = nltk.Text(text1) #attach NLTK func
+	return vocab
 
 def open(filename):
 	f = open('/home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/nltkbook/' + filename
