@@ -67,7 +67,7 @@ mma  int/you ta/because;when;(tempconj)pg111 n inixtep kul/allitna psa rassio. M
 
   Rapnau/ u/and l Catrau/ u/and l Mar Sharbelu/ u/and kul/alllon il ayioi shatna te kunu macakonu/ u/and jumpkon.
 
-  shukran  xtir/alot  xai
+  shukran/thanks   xtir/alot  xai
 Rapi te saitna kul/allitna
 
 *******
@@ -813,7 +813,7 @@ Mannist u/and er paca te itlca tixxan apiat....Tilce isfet smacat cashie....
 2. Pinkol moe. Pnakkel ............ ?
 3.Pakleb ta/because;when;(tempconj)pg111  strixu/ u/and fkallep lli/to  tsaera.
 
-Shukran  xtir/alot !!
+shukran/thanks   xtir/alot !!
 Afuan...
 
 Psal 2. Pinkol moe. Pnakkel ............ ?
@@ -861,7 +861,7 @@ axfeth.
 
 3. Ash kanu allik lli/to  klam ta/because;when;(tempconj)pg111  kuntkulu (ta kul/alltu) cashie.Ttte *kun kuntu*sikranin
 
-shukran Mcallem!!
+shukran/thanks  Mcallem!!
 
 Alli enne  xtir/alot . Laku ll exen:
 1. mkenes
@@ -1282,7 +1282,7 @@ L- tixxan mil xumat kanyitlca mesouranau/ u/and rixe xilve mallet l-modca kul/al
 Cijpitni  xtir/alot  adi kkilme!!!
 
 
-lli protasi e mil Typo tel/ofThe Maronites. Foto e mi Ssuzi Toumazoy!! Shukran  xtir/alot !!
+lli protasi e mil Typo tel/ofThe Maronites. Foto e mi Ssuzi Toumazoy!! shukran/thanks   xtir/alot !!
 *******
 
 Akke ta/because;when;(tempconj)pg111  xtuft/wrote ıllaku/ u/and fıl axar/otherNext  ıl llı post ta/because;when;(tempconj)pg111  xattaıtınna fıl Egglezıka aş
@@ -2133,7 +2133,7 @@ L'paxr tel deca shaitna, pittistantirna!!
 
  Pittacirfu ain uo ada mmodca?
 
- Shookran Abdallah!!
+ shukran/thanks  Abdallah!!
 
  Ada ma o l Parthenona?
 
@@ -3337,7 +3337,11 @@ Antonis Fragkiskou
 Antonis Fragkiskou pakshca amma/but ma pismca
 24   o 158 
 Antonis Fragkiskou
+<<<<<<< HEAD
 Antonis Fragkiskou ok  alok/now !!!! Shookran  xtir/alot !!!
+=======
+Antonis Fragkiskou ok alok!!!! shukran/thanks   xtir/alot !!!
+>>>>>>> 01fa54a1b0c7db462ef09a6a9626aa8be0e6d775
 24   o 159 
 Antonis Fragkiskou
 Antonis Fragkiskou ada o Kiddas aramaiko re???
@@ -3595,7 +3599,7 @@ tann intsi
 Marri l’vajca min xostna ta/because;when;(tempconj)pg111  t'itlca
 19 listopada 2011 o 15:37 · Lubię to!
 Antonis Fragkiskou
-Antonis Fragkiskou Shukran. e vajca ma o vajca....(heavily influenced by Greek.)
+Antonis Fragkiskou shukran/thanks . e vajca ma o vajca....(heavily influenced by Greek.)
 19 listopada 2011 o 15:50 · Lubię to!
 Antonis Fragkiskou
 Antonis Fragkiskou Ada xaitik antis te ji te kouinna shi kilme, tvaxxar pkishxat psifus...
