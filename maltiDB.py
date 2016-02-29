@@ -127,8 +127,8 @@ def vdel(root):
     maltidb = connect_maltidb()
     findEntry = maltidb.find({"_id": root})
     entry = {"_id": root}
-    for rootform in findEntry:
-        print(rootform)
+    for rootForm in findEntry:
+        print(rootForm)
 
         confirmation = input("Are you sure that you want to delete this document? Type 'yes' or 'no' to confirm: ")
         if confirmation == 'yes' or 'y':
@@ -138,3 +138,21 @@ def vdel(root):
             return delResult
         elif confirmation == 'no' or 'n':
             pass
+
+def vedit(root, updatedVForm):
+    #ex: ("rikeb", {'presentTenseForm.singularForms.hu_huwa':'jirkeb', 'pastTenseForms.pluralForms.aħna':'rkibna'})
+    maltidb = connect_maltidb()
+    entry = {"id_": root}
+    findEntry = maltidb.find(entry)
+    for rootForm in findEntry:
+        print(rootForm)L
+
+    confirmation = input("Are you sure that you want to edit this verb?" + root + " " + updatedVForm)
+    if confirmation == 'yes' or 'y':
+        result = maltidb.update_one(updatedVForm)
+        print(result.modified_count)
+        return result
+    elif confirmation == 'no' or 'n':
+        pass
+
+    
