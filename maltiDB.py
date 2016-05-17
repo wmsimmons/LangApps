@@ -138,6 +138,16 @@ def vdel(root):
             return delResult
         elif confirmation == 'no' or 'n':
             pass
+            
+def vfind():
+  maltidb = connect.maltidb()
+  root = input("Which verb are you looking for? Ikteb il-feghel hawn: ")
+  entry = {"id_": root}
+  findEntry = maltidb.find_one(entry)
+
+  if findEntry:
+    for rootForm in findEntry:
+      print(rootform)
 
 def vedit(root, updatedVForm):
     #ex: ("rikeb", {'presentTenseForm.singularForms.hu_huwa':'jirkeb', 'pastTenseForms.pluralForms.aħna':'rkibna'})
@@ -145,7 +155,7 @@ def vedit(root, updatedVForm):
     entry = {"id_": root}
     findEntry = maltidb.find(entry)
     for rootForm in findEntry:
-        print(rootForm)L
+        print(rootForm)
 
     confirmation = input("Are you sure that you want to edit this verb?" + root + " " + updatedVForm)
     if confirmation == 'yes' or 'y':
