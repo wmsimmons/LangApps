@@ -50,7 +50,7 @@ from the first person singular and plurals to imperative forms and inserts the r
 as a document in the database"""
 
 def vinsert(root):
-	#present forms
+    #present forms
     first_sing_present = input("Type the first person singular form: ")
     second_sing_present = input("Type the second person singular form: ")
     third_sing_he_present = input("Type the third person singular form for 'he': ")
@@ -124,6 +124,7 @@ def vinsert(root):
         pass
     
 def vdel(root):
+    """deletes the verb based off root from db"""
     maltidb = connect_maltidb()
     findEntry = maltidb.find({"_id": root})
     entry = {"_id": root}
@@ -140,29 +141,29 @@ def vdel(root):
             pass
             
 def vfind():
-  maltidb = connect.maltidb()
+  """finds a specific verb based on root fed to the input"""
+  maltidb = connect_maltidb()
   root = input("Which verb are you looking for? Ikteb il-feghel hawn: ")
-  entry = {"id_": root}
+  entry = {"_id": root}
   findEntry = maltidb.find_one(entry)
 
-  if findEntry:
-    for rootForm in findEntry:
-      print(rootform)
+  print(findEntry)
 
-def vedit(root, updatedVForm):
+def vedit(root):
     #ex: ("rikeb", {'presentTenseForm.singularForms.hu_huwa':'jirkeb', 'pastTenseForms.pluralForms.aħna':'rkibna'})
     maltidb = connect_maltidb()
-    entry = {"id_": root}
-    findEntry = maltidb.find(entry)
+    entry = {"_id": root}
+    findEntry = maltidb.find_one(root)
     for rootForm in findEntry:
         print(rootForm)
 
-    confirmation = input("Are you sure that you want to edit this verb?" + root + " " + updatedVForm)
+    confirmation = input("Are you sure that you want to edit this verb? " + root + ": ")
     if confirmation == 'yes' or 'y':
-        result = maltidb.update_one(updatedVForm)
+        updatedVForm = input("X'trid tbiddel f'din il-feghel? Please use {'presentTenseForm.singularForms.hu_huwa':'syntax'}: ")
+        for form in updatedVForm:
+            result = maltidb.update_one(entry, {"$set": updatedVForm}, upsert=False)
         print(result.modified_count)
-        return result
-    elif confirmation == 'no' or 'n':
+    else:
         pass
-
+    return result
     
