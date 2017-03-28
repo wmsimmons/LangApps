@@ -11,39 +11,12 @@ from pymongo import MongoClient
 client = MongoClient("localhost", 27017)
 db = client.maltiVerbConjugator
 
-verbs = []
-
-#connection = MongoClient
-#connection = MongoClient()
-#db = connection.maltiVerbConjugator
-
-# #asks for which verb, tense and subject you want
-# verb_selector = input("Insert desired verb")
-# verb_tense_selector = input("Insert which tense")
-# desired_pronoun = input("Insert which subject you want")
-
 def connect_maltidb():
     """connects to the maltiVerbConjugator database"""
-    connection = MongoClient
     connection = MongoClient()
     db = connection.maltiVerbConjugator
     maltiverb_db = db.maltiVerbConjugator
     return maltiverb_db
-
-
-#attach the maltiVerbConjugator database to the content of verbs verb_selector
-#logic for whether tense is past or present past on user raw_input verb_tense_selector
-#logic to retrieve the correct verb on user raw_input verb_selector
-
-#log to choose the subject based on user raw_input
-#when user raw_inputs verb, tense and pronoun, look up in database 
-#and return the result of the 3 raw_inputted values
-
-
-
-#how to structure mongo collection to work with verb tenses,
-#pronouns and verb roots
-
 
 """Feed the root of the verb, and function will ask you for each form of the verb
 from the first person singular and plurals to imperative forms and inserts the results
@@ -159,7 +132,7 @@ def vedit(root):
 
     confirmation = input("Are you sure that you want to edit this verb? " + root + ": ")
     if confirmation == 'yes' or 'y':
-        updatedVForm = input("X'trid tbiddel f'din il-feghel? Please use {'presentTenseForm.singularForms.hu_huwa':'syntax'}: ")
+        updatedVForm = input("X'trid tbiddel din il-feghel? Please use {'presentTenseForm.singularForms.hu_huwa':'syntax'}: ")
         for form in updatedVForm:
             result = maltidb.update_one(entry, {"$set": updatedVForm}, upsert=False)
         print(result.modified_count)
