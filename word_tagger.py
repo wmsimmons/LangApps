@@ -1,14 +1,18 @@
 "this is to tag words"
 import nltk
+from nltk.tokenize import word_tokenize
 import sys
 
-def save():
+def openfile():
 	#takes the result from annotator and adds it to a file
-	nameOfFile = raw_input("Which file is this to be placed in? ")
+	nameOfText = raw_input("Enter the name of the file to tag (no ext): ")
+	directory = '//home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/ilsien_sannaja/training_data/'
+	text = open(directory + nameOfText + '.txt','rU')
+	rtext = text.read()
+	tokens = nltk.word_tokenize(rtext)
+	#text = nltk.Text(tokens)
 
-	filename  = open(nameOfFile + '.txt','w')
-	sys.stdout = filename
-	#do work
+	return text
  
 def annotator(text):
 	processedText = text.split()
@@ -27,7 +31,7 @@ def annotator(text):
 
 	nameOfFile = raw_input("Which file is this to be placed in? ")
 
-	filename = open('C:/Users/wkeil/Desktop/qafastamalti/qafasTaMalti/hawaiianCorpus/' + nameOfFile + '.txt','a')
+	filename = open('//home/linguistlovepc/Documents/PythonProjects/maltese_nlp_app/kongugator_ta_feghel/qafasTaMalti/ilsien_sannaja/training_data/' + nameOfFile + '.txt','a')
 	filename.write(annotatedText)
 
 	print(filename)
@@ -37,3 +41,6 @@ def annotator(text):
 
 	"""punctuation may be a problem, how to deal with seperating words from punctuation
 	and tag them as a punc mark"""
+
+
+	
