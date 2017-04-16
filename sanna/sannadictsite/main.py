@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask import render_template, request
-from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)
