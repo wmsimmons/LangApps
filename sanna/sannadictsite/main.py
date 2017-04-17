@@ -17,18 +17,18 @@ def home():
 
     return render_template("/index.html")
 
-@app.route('/word/<query>', methods=['GET', 'POST'])
-def word():
-	if request.method == 'GET':
-		#db = mongo.db.nouns
-  		#entry = {"_id": query}
-  		#result = db.find_one(entry)
+@app.route('/words/<word>', methods=['GET', 'POST'])
+def wordDisplay(word):
+	db = mongo.db.nouns
+	entry = db.find({"word":word})
+	result = ''
+	
+	for e in entry:
+		result += e['word']
 
-  		#print(findEntry)
-		return render_template('word.html')
-	else:
-		return render_template('word.html')
-
+	return result
+  	
+  	#return render_template("/word.html")
 
 """MUST be at end of program"""
 if __name__ == '__main__':
