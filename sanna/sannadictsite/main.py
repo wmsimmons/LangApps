@@ -14,16 +14,21 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
+
     return render_template("/index.html")
 
-@app.route('/search', methods=['GET', 'POST'])
-def search():
+@app.route('/word/<query>', methods=['GET', 'POST'])
+def word():
+	if request.method == 'GET':
+		#db = mongo.db.nouns
+  		#entry = {"_id": query}
+  		#result = db.find_one(entry)
 
-	result = mongo.db.nouns
-	result.insert({'word':'payt', 'plural':'pkyut', 'meaning':'house, abode'})
-	return "Added the word"
+  		#print(findEntry)
+		return render_template('word.html')
+	else:
+		return render_template('word.html')
 
-	return render_template('/search.html')
 
 """MUST be at end of program"""
 if __name__ == '__main__':
