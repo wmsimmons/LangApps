@@ -12,16 +12,14 @@ app.config['MONGO_URI'] = 'mongodb://sanna:sanna@ds131109.mlab.com:31109/sanna'
 
 mongo = PyMongo(app)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
 
     return render_template("/index.html")
 
 @app.route('/words/<word>', methods=['GET', 'POST'])
 def wordDisplay(word):
-	db = mongo.db.nouns
-	entry = db.find_one({"word":word})
-		
+			
 	return render_template('word.html', word=word, entry=entry)
 
 
