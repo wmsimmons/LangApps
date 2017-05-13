@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask import render_template, request
@@ -17,12 +18,18 @@ def home():
 
     return render_template("/index.html")
 
-@app.route('/words/<word>', methods=['GET', 'POST'])
+@app.route('/word/<word>', methods=['GET', 'POST'])
 def wordDisplay(word):
-			
-	return render_template('word.html', word=word, entry=entry)
+    db = mongo.db.nouns
+    entry = db.find_one({"word":word})
+    return render_template('word.html', word=word, entry=entry)
+
+@app.route('/results', methods=['GET', 'POST'])
+def wordsDisplay():
+    word = request.args.get('word')
+    return render_template('results.html', word=word)
 
 
 """MUST be at end of program"""
 if __name__ == '__main__':
-    app.run(debug=True)	
+    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)	
