@@ -20,16 +20,17 @@ def home():
 
 @app.route('/word/<word>', methods=['GET', 'POST'])
 def wordDisplay(word):
+    result = request.args.get('searchword')
     db = mongo.db.nouns
     entry = db.find_one({"word":word})
-    return render_template('word.html', word=word, entry=entry)
+    return render_template('word.html', word=word, entry=entry, result=result)
 
 @app.route('/results', methods=['GET', 'POST'])
-def wordsDisplay():
-    word = request.args.get('word')
+def resultDisplay():
+    word = request.args.get('searchword')
     return render_template('results.html', word=word)
 
 
 """MUST be at end of program"""
 if __name__ == '__main__':
-    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)	
+    app.run(debug=True)	
