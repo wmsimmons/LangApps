@@ -15,7 +15,6 @@ mongo = PyMongo(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-
     return render_template("/index.html")
 
 @app.route('/word/<word>', methods=['GET', 'POST'])
