@@ -3,15 +3,17 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" href="/static/bootstrap.min.css" media="screen">
+	
 	</head>
 
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 	<div class="page-header">
   		<h4 align="center"> Sanna Dictionary <small>(The Language of the Town of Kormakitis, Cyprus)</small></h4>
 	</div>
 
-	<body>
-	
+<body>
+
 	<nav class="navbar navbar-inverse" id="navybars">
 	   <div class="container-fluid">
 	     <div class="navbar-header">
@@ -21,7 +23,7 @@
 	     	<li role="navigation"><a href="/">Home</a></li>
 			<li role="navigation"><a href="/aboutproject">About the Project</a></li>
 			<li role="navigation"><a href="/contactus">Contact Us</a></li>
-	     </ul>
+		 </ul>
 	     <form class="navbar-form navbar-left" method="GET" role="search" action="/results">
 			<div class="form-group"> 
 			   	<input type="search" class="form-control" placeholder="English <--> Sanna" name="searchword">
@@ -31,53 +33,10 @@
 	   </div>
 	</nav>
 
-		{% if entry['pos'] == 'noun' %}
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
+	<p>
+		To contact us, please use the contact form. This form can be used to make an update or edit request for a word, as well as
+		new words that are not in the dictionary. Please fill out the contact form, and we will get in contact with you as soon as possible.
+	</p>
+</body>		
 
-		<p align="center">
-			<strong> Word</strong>
-			<br>
-			</br>
-			{{ entry['word'] }}
-			<br>
-			<br>
-			<strong>Meaning <br></strong>
-			<br>
-			{{ entry['meaning'] }} 
-			<br>
-			{% elif entry['pos'] == 'adjective' %}
-
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-
-				<p align="center">
-				<strong> Base word form </strong>
-				<br>
-				{{ entry['word'] }}
-				<br>
-				<strong> Meaning <br></strong>
-				<br>
-				{{ entry['meaning'] }} 
-				<br>
-				<strong> Form: masculine | feminine | plural </strong>
-				<br>
-				{{ entry['mascForm']}}   {{ entry['femForm']}}   {{ entry['pluralForm']}}
-				<br>
-
-			{% else %}
-			<h2>No results.</h2>
-			{% endif %}
-		
-		</p>
-
-	</body>
 </html>

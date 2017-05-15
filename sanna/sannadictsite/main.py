@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 from flask import render_template, request
 from flask_pymongo import PyMongo
 
+#command to run app locally C:\Python34 .\python.exe C:\Users\langu\Desktop\qafasTaMalti\sanna\sannadictsite\main.py
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -28,6 +29,14 @@ def wordDisplay(word):
 def resultDisplay():
     word = request.args.get('searchword')
     return render_template('results.html', word=word)
+
+@app.route('/aboutproject')
+def aboutProj():
+	return render_template('aboutProject.html')
+
+@app.route('/contactus')
+def contactUs():
+	return render_template('contactUs.html')
 
 
 """MUST be at end of program"""

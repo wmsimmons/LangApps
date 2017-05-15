@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="/static/bootstrap.min.css" media="screen">
+	
+	</head>
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+	<div class="page-header">
+  		<h4 align="center"> Sanna Dictionary <small>(The Language of the Town of Kormakitis, Cyprus)</small></h4>
+	</div>
+
+<body>
+
+	<nav class="navbar navbar-inverse" id="navybars">
+	   <div class="container-fluid">
+	     <div class="navbar-header">
+	       <a class="navbar-brand" href="#">Leksikos tel Sanna</a>
+	     </div>
+	     <ul class="nav navbar-nav">
+	     	<li role="navigation"><a href="/">Home</a></li>
+			<li role="navigation"><a href="/aboutproject">About the Project</a></li>
+			<li role="navigation"><a href="/contactus">Contact Us</a></li>
+	     </ul>
+	     <form class="navbar-form navbar-left" method="GET" role="search" action="/results">
+			<div class="form-group"> 
+			   	<input type="search" class="form-control" placeholder="English <--> Sanna" name="searchword">
+			</div>
+			<button type="submit" class="btn btn-default">Search | Fatteş</button>
+		</form>
+	   </div>
+	</nav>
+
+	<p>
+		Cypriot Maronite Arabic (known as Sanna) is a language historically spoken in the Northwestern area of Cyprus. The name of the language comes from the word for language "lisan", it has evolved into "san", combined with the possessive particle for "us", "na", to make "Sanna", literally meaning "our language". 
+
+		<br>
+		<br>
+
+		There were four major migrations from the Lebonon/Syria/present-Palestine to Cyprus during the 8th and 12/13th centuries, mainly to escape religious persecution. The language persisted for many centuries, but due to further persecution, the language only persisted in four villages, and by the mid-20th century, it had only one major stronghold, the village of Kormakitis. Kormakitis is regarded as the homeland of the Sanna language. In 1974, the Cyprus war occurred, and due to the invasion of Northern Cyprus, the native Maronites of Kormakitis were forced to either join the Greek Cypriots or stay with the Turkish Cypriots, most of them chose to join the Greek Cypriots, sharing religious beliefs. This caused the language to be dispersed across Cyprus, the vast majority of speakers only used Greek with their families and this has lead to the rapid decline of the language. The language is only used by some elders in Kormakitis and occasionally by native speakers at Maronite events.
+
+		<br>
+		<br>
+		This project was started to address the issue of the language, there are currently no dictionaries or any learner-friendly resources for this language. This project aims to serve as the main dictionary, with audio samples for each word, providing example sentences, a concordance tool (to see how words are used), and a basic grammar to the Cypriot Maronite community of the Republic of Cyprus.
+
+
+	</p>
+
+</body>		
+
+</html>
