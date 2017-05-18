@@ -73,6 +73,103 @@
 				{{ entry['mascForm']}}   {{ entry['femForm']}}   {{ entry['pluralForm']}}
 				<br>
 
+			{% elif entry['pos'] == 'verb' %}
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<p align="center">
+				<strong> Verb infinitive form </strong>
+				<br>
+				{{ entry['word'] }}
+				<br>
+				<strong> Meaning <br></strong>
+				{{ entry['meaning'] }} 
+				<br>
+				<br>
+				Present forms:
+				<br>
+				<strong> Ana: {{ entry['presForms']['pres_FirstPersonSing'] }} 
+				<br>
+				 naxni: {{ entry['presForms']['pres_FirstPersonPl'] }}</strong>
+				 <br>
+				<strong>Int: {{ entry['presForms']['pres_SecondPersonSingMasc'] }}  
+				<br>
+				<br>intu? {{ entry['presForms']['pres_SecondPersonPl'] }}</strong>
+				<br>
+				<strong>Inti: {{ entry['presForms']['pres_SecondPersonSingFem'] }}  </strong>
+				<br>
+				<strong>Uo: {{ entry['presForms']['pres_ThirdPersonMasc'] }}| 
+				<br>
+				Ie: {{ entry['presForms']['pres_ThirdPersonFem'] }}  
+				<br>     
+				Innen: {{ entry['presForms']['pres_ThirdPersonPl'] }}</strong>
+				<strong></strong>
+				<br>
+				
+				<br>
+				Past forms:
+				<br>
+				<strong>Ana: {{ entry['pastForms']['past_FirstPersonSing'] }} 
+				<br> 
+				naxni: {{ entry['pastForms']['past_FirstPersonPl'] }}</strong>
+				<br>
+				<strong>Int: {{ entry['pastForms']['past_SecondPersonSingMasc'] }} 
+				<br>
+				intu? {{ entry['pastForms']['past_SecondPersonPl'] }}</strong>
+				<br>
+				<strong>Inti: {{ entry['pastForms']['past_SecondPersonSingFem'] }}  </strong>
+				<br>
+				<strong>Uo: {{ entry['pastForms']['past_ThirdPersonMasc'] }}| 
+				<br>
+				Ie: {{ entry['pastForms']['past_ThirdPersonFem'] }}
+				<br>   
+				Innen : {{ entry['pastForms']['past_ThirdPersonPl'] }}</strong>
+
+				<br>
+				<br>
+				Future forms:
+				<br>
+				<strong>Ana:</strong> {{ entry['futureForms']['future_FirstPersonSing'] }} 
+				 <br>
+				naxni: {{ entry['futureForms']['future_FirstPersonPl'] }}
+				<br>
+				<strong>Int: {{ entry['futureForms']['future_SecondPersonSingMasc'] }}  
+				<br>
+				intu? {{ entry['futureForms']['future_SecondPersonPl'] }}</strong>
+				<br>
+				<strong>Inti: {{ entry['futureForms']['future_SecondPersonSingFem'] }}  </strong>
+				<br>
+				<strong>Uo: {{ entry['futureForms']['future_ThirdPersonMasc']}}|
+				<br>
+				Ie: {{ entry['futureForms']['future_ThirdPersonFem']}}      
+				<br>
+				Innen : {{ entry['futureForms']['future_ThirdPersonPl'] }}</strong>
+
+				<br>
+				<br>
+				Present negative forms:
+				<br>
+				<strong>Ana: {{ entry['future_FirstPersonSing'] }}  
+				<br>
+				naxni: {{ entry['future_FirstPersonPl'] }}</strong>
+				<br>
+				<strong>Int: {{ entry['future_SecondPersonSingMasc'] }}  
+				<br>
+				intu? {{ entry['future_SecondPersonPl'] }}</strong>
+				<br>
+				<strong>Inti: {{ entry['future_SecondPersonSingFem'] }}  </strong>
+				<br>
+				<strong>Uo|Ie: {{ entry['future_ThirdPersonMasc'] }}|
+				<br>
+				Ie: {{ entry['future_ThirdPersonFem'] }}    
+				<br>
+				Innen : {{ entry['future_ThirdPersonPl'] }}</strong>
+				
 			{% else %}
 			<h2>No results.</h2>
 			{% endif %}
