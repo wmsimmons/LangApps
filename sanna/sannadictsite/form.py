@@ -1,8 +1,8 @@
 from flask.ext.wtf import Form, TextField, TextAreaField, SubmitField
+from wtforms.fields import TextField, BooleanField
  
-class ContactForm(Form):
-  name = TextField("Name")
+class requestForm(Form):
   email = TextField("Email")
-  subject = TextField("Subject")
   message = TextAreaField("Message")
+  checkbox = BooleanField("Is this a request to add or update a word?")
   submit = SubmitField("Submit")
