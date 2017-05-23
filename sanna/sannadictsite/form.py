@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import TextField, BooleanField, TextAreaField, SubmitField
+from wtforms import TextField, TextAreaField, SubmitField
+from wtforms.validators import InputRequired
  
-class requestForm(FlaskForm):
-  name = TextField("Name")
-  email = TextField("Email")
-  message = TextAreaField("Message")
-  checkbox = BooleanField("Request to add/modify a word?")
-  submit = SubmitField("Submit")
+class ContactForm(FlaskForm):
+	name = TextField("Name",  [InputRequired()])
+	email = TextField("Email",  [InputRequired()])
+	subject = TextField("Subject",  [InputRequired()])
+	message = TextAreaField("Message",  [InputRequired()])
+	submit = SubmitField("Submit")
