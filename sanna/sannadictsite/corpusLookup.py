@@ -8,7 +8,7 @@ def lookup(word):
 	text = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
 	tokens = word_tokenize(text)
 	text = Text(tokens)
-	result = text.concordance(word).decode('utf-8')
+	result = text.concordance(word)
 
 	return result
 
