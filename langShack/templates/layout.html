@@ -1,0 +1,16 @@
+{% load static from staticfiles %}
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}Xacaltlahtolli: LangShack{% endblock %}
+		<link rel="stylesheet" href="{% static 'css/layout.css' %}">
+	</title>
+</head>
+<body>
+	{% block content %}
+	<div></div>
+	<h2>Xacaltlahtolli: LangShack</h2>{% endblock %}
+</body>
+</html>
