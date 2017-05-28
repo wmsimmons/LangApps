@@ -1,12 +1,13 @@
-import os
+from corpusLookup import get_concordance
 from flask import Flask, flash
 from flask_bootstrap import Bootstrap
 from flask import render_template, request, url_for
-from flask_pymongo import PyMongo
-from wtforms.validators import InputRequired
-from form import ContactForm
-from corpusLookup import lookup
 from flask_mail import Message, Mail
+from flask_pymongo import PyMongo
+from form import ContactForm
+from wtforms.validators import InputRequired
+from nltk import * 
+import os
 
 #command to run app locally C:\Python34 .\python.exe C:\Users\langu\Desktop\qafasTaMalti\sanna\sannadictsite\main.py
 
@@ -72,7 +73,13 @@ def contact():
 
 @app.route('/lookup/')
 def concordance():
-    word = lookup("umm")
+    raw = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
+
+    print()
+    print('Concordance results')
+    word = get_concordance('umm', raw)
+    for result in word:
+        print(str(result))
     return render_template('corpusLookup.html', word=word)
 
 

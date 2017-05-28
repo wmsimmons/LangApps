@@ -140,9 +140,46 @@
 				Ie: {{ entry['future_ThirdPersonFem'] }}    
 				<br>
 				Innen : {{ entry['future_ThirdPersonPl'] }}</strong>
-				
+			{% elif entry['pos'] == 'adposition' %}	
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p align="center">
+				<strong> Word</strong>
+				<br>
+				</br>
+				{{ entry['word'] }}
+				<br>
+				<br>
+				<strong>Meaning <br></strong>
+				<br>
+				{{ entry['meaning'] }} 
+				<br>
+
+			{% elif entry['pos'] == 'quantity' %}
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p align="center">
+				<strong> Word</strong>
+				<br>
+				</br>
+				{{ entry['word'] }}
+				<br>
+				<br>
+				<strong>Meaning <br></strong>
+				<br>
+				{{ entry['meaning'] }} 
+				<br>
+
 			{% else %}
 			<h2>No results.</h2>
-			{% endif %}
+		{% endif %}
 		
 {% endblock %}
