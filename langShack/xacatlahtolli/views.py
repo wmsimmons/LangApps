@@ -1,9 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
-from .models import Shack
-
 # Create your views here.
-def shack_list(request):
-	shacks = Shack.objects.all()
-	return render(request, 'xacatlahtolli/shack_list.html', {'shacks': shacks})
+def projects(request):
+	return render(request, 'langinfo.html')

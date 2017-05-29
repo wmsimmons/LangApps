@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}{{% language.title %}}{% endblock %}
+{% block content}
+	
+
+	{% for langinfo in language %}
+	<h3>{{ langinfo.language }}
+	<h2>{{ langinfo.title }}</h2></h3>
+	{{ langinfo.description }}
+
+	{% endfor %}
+
+{% endblock %}
