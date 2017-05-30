@@ -77,10 +77,10 @@ def concordance():
 
     print()
     print('Concordance results')
-    word = get_concordance('umm', raw)
-    for result in word:
-        print(str(result))
-    return render_template('corpusLookup.html', word=word)
+    concordance = get_concordance('umm', raw)
+    for phrase in concordance:
+        print(str(phrase))
+    return render_template('corpusLookup.html', concordance=concordance)
 
 
 """MUST be at end of program"""

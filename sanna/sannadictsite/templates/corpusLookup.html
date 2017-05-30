@@ -2,6 +2,9 @@
 
 {% block content %}
 <h3 >Concordance results:</h3><br>
-{{ word }}
+	{% for phrase in concordance %}
+		{{ phrase }}
+		<br>
+	{% endfor %}
 
 {% endblock %}
