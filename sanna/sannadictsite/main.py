@@ -71,16 +71,26 @@ def contact():
     elif request.method == 'GET':
         return render_template('contact.html', form=form)
 
-@app.route('/lookup/')
-def concordance():
-    raw = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
+@app.route('/contextsearch', methods=['GET', 'POST'])
+def concordanceSearch():
+    context_word = request.args.get('searchword')
+    return render_template("concordanceSearch.html", context_word=context_word)
 
-    print()
-    print('Concordance results')
-    concordance = get_concordance('umm', raw)
+@app.route('/concordanceresults')
+def concordResults():
+    context_word = request.args.get('searchword')
+    return render_template('concordanceResults.html', context_word=context_word)
+
+
+@app.route('/lookup/<result>')
+def concordance(result):
+    raw = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
+    result = request.args.get("searchword")
+    
+    concordance = get_concordance(str(result), raw)
     for phrase in concordance:
         print(str(phrase))
-    return render_template('corpusLookup.html', concordance=concordance)
+    return render_template('corpusLookup.html', concordance=concordance, result=result)
 
 
 """MUST be at end of program"""

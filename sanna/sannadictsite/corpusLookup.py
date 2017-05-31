@@ -5,15 +5,6 @@ from nltk.tokenize import word_tokenize
 import sys
 
 #command to run app locally C:\Python34 .\python.exe C:\Users\langu\Desktop\qafasTaMalti\sanna\sannadictsite\corpusLookup.py
-
-def lookup(word):
-	text = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
-	tokens = word_tokenize(text)
-	text = Text(tokens)
-	result = text.concordance(word)
-	str(result)
-
-	return result
  
 def get_concordance(target_word, tar_passage, left_margin = 10, right_margin = 10):
 	"""
