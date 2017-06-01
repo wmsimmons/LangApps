@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from corpusLookup import get_concordance
 from flask import Flask, flash
 from flask_bootstrap import Bootstrap
@@ -82,15 +85,15 @@ def concordResults():
     return render_template('concordanceResults.html', context_word=context_word)
 
 
-@app.route('/lookup/<result>')
-def concordance(result):
+@app.route('/lookup/<word>')
+def concordance(word):
     raw = open("C:/Users/langu/Desktop/qafasTaMalti/sanna/sannadictsite/cypriotArabic.txt", "rU", encoding="utf-8").read()
     result = request.args.get("searchword")
     
-    concordance = get_concordance(str(result), raw)
+    concordance = get_concordance(str(word), raw)
     for phrase in concordance:
-        print(str(phrase))
-    return render_template('corpusLookup.html', concordance=concordance, result=result)
+        print(phrase)
+    return render_template('corpusLookup.html', concordance=concordance, result=result, word=word)
 
 
 """MUST be at end of program"""
