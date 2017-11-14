@@ -1,32 +1,27 @@
+{% load staticfiles %}
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
 	<title>
-	<div class="page-header">
-		<h1> Xacaltlahtolli: <small>The LangShack</small></h1>
-	</div>
 
 		{% block title %}{% endblock %}
-		<link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
-		<link rel="stylesheet" href="{% static 'libs/bootstrap-3.3.5/css/bootstrap-theme.min.css' %}">
+
 	</title>
 	<h1 align="center">Xacaltlahtolli: The LangShack</h1>
 </head>
 <body>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/projects">Projects</a>
-		<a href="">LangBlog</a>
-		<a href="">Our mission</a>
-		<a href="">Request research|Contact the LangShack</a>
-		
+	<nav>		
 		<ul class="nav nav-pills nav-stacked">
 			<a href="/">Home</a>
 			<a href="/projects">Projects</a>
-			<a href="">LangBlog</a>
-			<a href="">Our mission</a>
-			<a href="">Request article/Contact the LangShack</a>
+			<a href="/langblog">LangBlog</a>
+			<a href="/">Our mission</a>
+			<a href="">Contact the LangShack</a>
 		</ul>
 	</nav>
 
