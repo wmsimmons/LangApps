@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	
+	{% for post in object_list %}
+        <h2><a href="/langblog/{{ post.id }}">  {{ post.title }}</a></h2>
+		<h5>{{ post.pubdate }}</h5>
+		<br>
+		<p>{{ post.content }}</p>
+	
+	{% endfor %}
+
+{% endblock %}

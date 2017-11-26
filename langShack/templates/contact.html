@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p>
+        If you have any questions about the projects, our organization, would like to have a linguistic
+        partnership, or collaboration for a language revival/revitalization project, then please fill out the
+        contact form, and we will be in contact with you as soon as possible.
+    </p>
+
+    <div class="row">
+        <form action="" method="post" style="margin-left: 40px;">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="button">
+        </form>
+    </div>
+{% endblock %}

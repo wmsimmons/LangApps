@@ -3,27 +3,22 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="{% static 'css/main.css' %}">
-
+    	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<title>
-
-		{% block title %}{% endblock %}
-
+	Xacaltlahtolli: LangShack
+	{% block title %}{% endblock %}
 	</title>
 	<h1 align="center">Xacaltlahtolli: The LangShack</h1>
 </head>
 <body>
-	<nav>		
-		<ul class="nav nav-pills nav-stacked">
-			<a href="/">Home</a>
-			<a href="/projects">Projects</a>
-			<a href="/langblog">LangBlog</a>
-			<a href="/">Our mission</a>
-			<a href="">Contact the LangShack</a>
-		</ul>
-	</nav>
+	<ul class="nav nav-pills nav-stacked" style="width: 250px;color: white;">
+		<li role="presentation"><a style="color:white;" href="/">Home</a> </li>
+		<li role="presentation"><a style="color:white;" href="/langblog/">The LangBlog</a></li>
+		<li role="presentation"><a style="color:white;" href="/ourmission">Our mission</a></li>
+		<li role="presentation"><a style="color:white;" href="/contact">Contact the LangShack</a></li>
+	</ul>
 
 	{% block content %}{% endblock %}
 </body>

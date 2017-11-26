@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	
+	{% for post in posts %}
+        <h1 style="text-align:center;"><a style="color:white;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <p style="text-align:center; font-weight:bold;">published: {{ post.created_date }}</p>
+		<br>
+		<p style="text-align:center;">{{ post.text|linebreaksbr }}</p>
+        <div style="text-align:center;">
+        <a style="color:white;" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+        </div>
+	{% endfor %}
+
+{% endblock %}
