@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import langShack.views
 import contact.views
+import papahana.views
 
 admin.autodiscover()
 
@@ -15,5 +16,6 @@ urlpatterns = [
     url(r'^ourmission', langShack.views.ourMission),
     url(r'^langblog/', include('langBlog.urls')),
     url(r'^contact/$', contact.views.contactUs, name='contact'),
+    url(r'^workbench/$', papahana.views.default_workbench),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -18,6 +18,6 @@ def contactUs(request):
                 ['languageshack@gmail.com']
             )
             messages.add_message(request, messages.SUCCESS,
-                                 "Thanks for your message, we'll respond soon.")
+                                 "Maururu for your message, we'll respond soon.")
             return HttpResponseRedirect(reverse('contact'))
     return render(request, 'contact.html', {'form': form})
