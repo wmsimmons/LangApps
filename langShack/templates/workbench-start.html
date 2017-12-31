@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<h2 align="center">Welcome to the Papahana!</h2>
+{% endblock %}
+
+{% block content %}
+<h6 align="center"> "Papahana" means "workbench" in the Hawaiian language (ʻŌlelo hawaiʻi).
+The word "papahana" derives from Hawaiian's 'papa' - 'to write', and 'hana' - 'to work, do, make'.</h6>
+<br>
+    <form class="form-inline">
+        <button class="btn btn-outline-success" style="margin-left:600px;" type="button">
+            <a style="color:white;" href="/workbench">Go to Papahana</a>
+        </button>
+     </form>
+<br>
+<br>
+<strong style="margin-left:40px;">This workbench provides a toolbelt for any linguist to analyze rare/endangered languages in depth. Some of these
+    custom tools include</strong>
+    <ul style="margin-left:50px;">
+        <li>Comparing wordlists for similarities by CSV file</li>
+        <li>Studying the history and evolution of a language through a custom corpus</li>
+        <li>Inputting custom rule-based grammar patterns</li>
+        <li>Scanning old documents to text for analysis</li>
+        <li>Custom word tagger and trainer</li>
+        <li>Graphs and other features to show linguistic data</li>
+    </ul>
+{% endblock %}

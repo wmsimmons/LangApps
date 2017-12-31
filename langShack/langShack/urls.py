@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^ourmission', langShack.views.ourMission),
     url(r'^langblog/', include('langBlog.urls')),
     url(r'^contact/$', contact.views.contactUs, name='contact'),
-    url(r'^workbench/$', papahana.views.default_workbench),
+    url(r'^workbench-start/$', papahana.views.workbench_start),
+    url(r'^workbench/$', papahana.views.workbench),
     url(r'^admin/', include(admin.site.urls)),
 ]
