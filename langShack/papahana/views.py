@@ -1,8 +1,10 @@
 from django.shortcuts import render
-# from django.http import HttpResponseRedirect
-# from .forms import UploadFileForm
-#from somewhere import handle_uploaded_file
-#from django.utils import timezone
+from django.core.files.storage import FileSystemStorage
+from .forms import DocumentForm
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
+import csv
+from .models import Workbench
 
 # Create your views here.
 def workbench_start(request):
@@ -13,12 +15,13 @@ def workbench(request):
 
     return render(request, 'workbench.html')
 
-# def upload_file(request):
-#     if request.method == 'POST':
-#         form = UploadFileForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             handle_uploaded_file(request.FILES['file'])
-#             return HttpResponseRedirect('/success/url/')
-#     else:
-#         form = UploadFileForm()
-#     return render(request, 'upload.html', {'form': form})
+def simple_upload(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/workbench')
+    else:
+        form = DocumentForm()
+    return render(request, 'workbench-upload.html', {
+        'form': form})

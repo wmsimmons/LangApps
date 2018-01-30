@@ -1,6 +1,13 @@
+from .models import Workbench, upLoad
 from django import forms
 
-class UploadFileForm(forms.Form):
-    title = forms.CharField(max_length=75)
-    file = forms.FileField()
-    
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = upLoad
+        fields = ('document', )
+
+# class WorkbenchForm(forms.ModelForm):
+#     class Meta:
+
+#         model = Workbench
+#         fields = ('',)
