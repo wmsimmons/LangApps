@@ -1,24 +1,32 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if post.pubdate %}
-            <div class="date">
-                {{ post.pubdate }}
-            </div>
-        {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+    <div class="boxed" style="border: 6px solid black;margin-left:200px;margin-right:200px;">
+        <div class="post" style="text-align:center">
+            <br>
+            <h1 style="color:white;">{{ post.title }}</h1>
+                {% if post.pubdate %}
+                <br>
+                    <div class="date" style="color:white;">
+                        {{ post.pubdate }}
+                    </div>
+                    <br>
+                {% endif %}
+            <p style="margin-left:50px;margin-right:50px;color:white;">{{ post.text|linebreaksbr }}</p>
+        </div>
     </div>
+
     <hr>
     <a class="btn btn-default" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
     {% for comment in post.comments.all %}
-        <div class="comment">
-            <div class="date">{{ comment.created_date }}</div>
-            <strong>{{ comment.author }}</strong>
-            <p>{{ comment.text|linebreaks }}</p>
+        <div class="comment" style="text-align:center;color:white;">
+            <div class="date" style="text-align:center;color:white;">{{ comment.created_date }}</div>
+            <strong style="text-align:center;color:white;">{{ comment.author }}</strong>
+            <p style="text-align:center;color:white;">{{ comment.text|linebreaks }}</p>
         </div>
+        <br>
+		<br>
     {% empty %}
-        <p>No comments here yet! </p>
+        <p style="text-align:center;margin-left:150px;margin-right:150px;color:white;">No comments here yet! </p>
     {% endfor %}
 {% endblock %}
