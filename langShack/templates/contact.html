@@ -1,17 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
-    <br>    
-    <p style="text-align: center;">
-        If you have any questions about the projects, our organization, would like to have a linguistic
-        partnership, or collaboration for a language revival/revitalization project, then please fill out the
-        contact form, and we will be in contact with you as soon as possible.
-    </p>
+     <div class="square" style="border: 6px solid black;margin-left:10%;margin-right:10%;">
+        <br>
+        <h3 style="text-align: center;font-weight: bold;color:white"> If you have any questions about the projects, our organization, would like to have a </h3>
+        <br>
+        <h3 style="text-align: center;font-weight: bold;color:white"> linguistic partnership, or collaboration for a language revival/revitalization project, </h3>
+        <br>
+        <h3 style="text-align: center;font-weight: bold;color:white"> then please fill out the contact form, and we will be in contact with you as soon as possible.  </h3>
 
-    <div class="row">
-        <form action="" method="post" style="margin-left: 40px;">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <input type="submit" class="button">
-        </form>
+        <br>
+        <br>
+        <div class="row">
+            <form action="" method="post" style="text-align:center">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" class="button" style="text-align:center">
+            </form>
+        </div>
     </div>
 {% endblock %}
