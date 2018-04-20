@@ -6,7 +6,7 @@ from .forms import CommentForm
 
 # Create your views here.
 def post_list(request):
-    posts = Post.objects.filter(pubdate__lte=timezone.now()).order_by('pubdate')
+    posts = Post.objects.filter(pubdate__lte=timezone.now()).order_by('pubdate')[0:9]
     return render(request, 'post_list.html', {'posts': posts})
 
 
