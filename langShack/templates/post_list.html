@@ -5,14 +5,16 @@
 	{% for post in posts %}
 	    <div class="boxed" style="border: 6px solid black;margin-left:140px;margin-right:140px;">
 	        <br>
-	        <h1 style="text-align:center;"><a style="color:white;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+	        <h1 style="text-align:center;"><a style="color:white;font-family:Arial;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 	        <br>
-            <p style="text-align:center; font-weight:bold;color:white;">Published: {{ post.created_date }}</p>
+            <p style="text-align:center; font-weight:bold;color:white;font-family:Arial;">Published: {{ post.created_date }}</p>
     		<br>
-    		<p style="margin-left:50px;margin-right:50px;text-align:left;color:white;">{{ post.text|linebreaksbr }}</p>
+    		<br>
+    		<p style="margin-left:50px;margin-right:50px;text-align:left;color:white;font-family:Arial;">{{ post.text|linebreaksbr|truncatewords:100 }}</p>
             <div style="text-align:center;color:white;">
-                <a style="color:white;" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+                <a style="color:white;font-family:Arial;" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
             </div>
+            <br>
 	    </div>
 
         <br>
