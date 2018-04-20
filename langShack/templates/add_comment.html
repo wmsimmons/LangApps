@@ -1,9 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>New comment</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Send</button>
-    </form>
+    <div class="square" style="border: 6px solid black;margin-left:10%;margin-right:10%;font-family:Arial;">
+        <h1 style="color:white;font-family:Arial;">New comment</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Send</button>
+        </form>
+    </div>
 {% endblock %}
