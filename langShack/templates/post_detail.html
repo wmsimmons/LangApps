@@ -4,7 +4,7 @@
     <div class="boxed" style="border: 6px solid black;margin-left:200px;margin-right:200px;">
         <div class="post" style="text-align:center">
             <br>
-            <h1 property="og:title" style="color:white;font-family:Arial;">{{ post.title }}</h1>
+            <h1 property="og:title" style="color:#00FFFF;font-family:Arial;">{{ post.title }}</h1>
                 {% if post.pubdate %}
                 <br>
                     <div class="date" style="color:white;font-family:Arial;">
@@ -15,12 +15,12 @@
                 <img property="og:image" src="{{ post.image.url }}" alt="img">
                 <meta property="og:image" content="{{ post.image.url }}" alt="img"/>
 
-            <p style="margin-left:50px;margin-right:50px;color:white;font-family:Arial">{{ post.text|linebreaksbr }}</p>
+            <p style="margin-left:50px;margin-right:50px;color:#FF7F00;font-family:Arial">{{ post.text|linebreaksbr }}</p>
         </div>
     </div>
 
     <hr>
-    <h2 style="text-align:center;"><a class="btn btn-default" style="color:white;font-family:Arial;" href="{% url 'add_comment' pk=post.pk %}">Add comment</a></h2>
+    <h2 style="text-align:center;"><a class="btn btn-default" style="color:#00FF7F;font-family:Arial;" href="{% url 'add_comment' pk=post.pk %}">Add comment</a></h2>
     <br>
     {% for comment in post.comments.all %}
         <div class="comment" style="text-align:center;color:white;">
@@ -31,7 +31,7 @@
         <br>
 		<br>
     {% empty %}
-        <p style="text-align:center;margin-left:150px;margin-right:150px;color:white;font-family:Arial;">No comments here yet! </p>
+        <p style="text-align:center;margin-left:150px;margin-right:150px;color:#00FF7F;font-family:Arial;">No comments here yet! </p>
         <br>
     {% endfor %}
 {% endblock %}
