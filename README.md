@@ -1,11 +1,10 @@
 # SannaLeksionary
 
-This repository currently (April 2017) contains two seperate applications:
+This repository currently contains three seperate applications:
+	LangShack - linguistic/technical website written in Python Django
+
+	mongoDBMalteseVerbs A small mongoDB project with 87 Maltese verbs, using PyMongo, see /malteseVerbsMongoDB/readme.md for more info
 	
 
-
-	- A small mongoDB project with 87 Maltese verbs, using PyMongo, see /malteseVerbsMongoDB/readme.md for more info
-	
-
-	- A dictionary application for the Sanna/Cypriot Maronite Arabic language
+	Sannadict - A dictionary application for the Sanna/Cypriot Maronite Arabic language
 
