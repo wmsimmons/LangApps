@@ -11,7 +11,7 @@
     		<br>
     		<br>
     		<p style="margin-left:50px;margin-right:50px;text-align:left;color:#FF7F00;font-family:Arial;">{{ post.text|linebreaksbr|truncatewords:100 }}</p>
-            <div style="text-align:center;color:white;">
+            <div id="comment" style="text-align:center;color:white;">
                 <a style="color:#FF3300;font-family:Arial;" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
             </div>
             <br>
@@ -23,5 +23,23 @@
         <br>
         <br>
 	{% endfor %}
+
+	<div class="pagination">
+        <span class="step-links">
+            {% if posts.has_previous %}
+                <a style="color:white;" href="?page=1">&laquo; first</a>
+                <a style="color:white;" href="?page={{ contacts.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+            </span>
+
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}" style="color:white;">next</a>
+                <a href="?page={{ posts.paginator.num_pages }}" style="color:white;">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 
 {% endblock %}
