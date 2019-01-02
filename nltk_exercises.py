@@ -376,4 +376,22 @@ def hedge(text):
      text.insert(id, 'like')
    return text
 
-# question 23
+ question 23
+# how the hell do you do this question?
+
+# question 24
+def generate_model(cfdist, word, num=15):
+    for i in range(num):
+        print(word)
+        word = cfd[word].max()
+        text = nltk.corpus.genesis.words('english-kjv.txt')
+        bigrams = nltk.bigrams(text)
+        cfd = nltk.ConditionalFreqDist(bigrams)
+        # store the n most likely words, then randomly choose a word form the list using random.choice()
+        
+        ''' Then select a particular genre, such as a section of brown corpus or 
+        train the model on that particular corpus and get it to generate random text
+        how intelligible is the text? You may have to experiement with different start words, etc.
+        Discuss the strengths and weaknesses of this method of generating random text'''
+
+        # Now, train your system using two distinct genres, and experiement with generating text in the hybrid genre.
