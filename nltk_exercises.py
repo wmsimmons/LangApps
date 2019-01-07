@@ -395,3 +395,23 @@ def generate_model(cfdist, word, num=15):
         Discuss the strengths and weaknesses of this method of generating random text'''
 
         # Now, train your system using two distinct genres, and experiement with generating text in the hybrid genre.
+      
+      
+# question 7
+# 7a
+dets = []
+
+matches = re.findall(r'\b\san\s+|\sthe\s+|\sa\s+', nltk.corpus.brown.words(), re.I)
+for match in matches:
+   dets.append(dets)
+return dets
+
+# 7b
+dets = []
+
+matches = re.findall(r'\b\san\s+|\sthe\s+|\sa\s+', nltk.corpus.brown.words(), re.I)
+for match in matches:
+   dets.append(dets)
+return dets
+
+# question 8
