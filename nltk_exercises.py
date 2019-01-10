@@ -397,6 +397,8 @@ def generate_model(cfdist, word, num=15):
         # Now, train your system using two distinct genres, and experiement with generating text in the hybrid genre.
       
       
+#####~~~~~~~ CHAPTER 3 ~~~~~~###### 
+
 # question 7
 # 7a
 dets = []
@@ -442,4 +444,49 @@ return dets
 12. s = ''
 	for letter in s:
 		print(letter)
-	
+
+# question 13
+>>> spl[:150]
+['The/at', 'Fulton/np-tl', 'County/nn-tl', 'Grand/jj-tl', 'Jury/nn-tl', 'said/vbd', 'Friday/nr', 'an/at', 'investigation/nn', 'of/in', "Atlanta's/np$", 
+'recent/jj', 'primary/nn', 'election/nn', 'produced/vbd', '``/``', 'no/at', 'evidence/nn', "''/''", 'that/cs', 'any/dti', 'irregularities/nns', 'took/vbd', 
+'place/nn', './.', 'The/at', 'jury/nn', 'further/rbr', 'said/vbd', 'in/in', 'term-end/nn', 'presentments/nns', 'that/cs', 'the/at', 'City/nn-tl', 
+'Executive/jj-tl', 'Committee/nn-tl', ',/,', 'which/wdt', 'had/hvd', 'over-all/jj', 'charge/nn', 'of/in', 'the/at', 'election/nn', ',/,', '``/``', 
+'deserves/vbz', 'the/at', 'praise/nn', 'and/cc', 'thanks/nns', 'of/in', 'the/at', 'City/nn-tl', 'of/in-tl', 'Atlanta/np-tl', "''/''", 'for/in', 'the/at', 
+'manner/nn', 'in/in', 'which/wdt', 'the/at', 'election/nn', 'was/bedz', 'conducted/vbn', './.', 'The/at', 'September-October/np', 'term/nn', 'jury/nn', 
+'had/hvd', 'been/ben', 'charged/vbn', 'by/in', 'Fulton/np-tl', 'Superior/jj-tl', 'Court/nn-tl', 'Judge/nn-tl', 'Durwood/np', 'Pye/np', 'to/to', 
+'investigate/vb', 'reports/nns', 'of/in', 'possible/jj', '``/``', 'irregularities/nns', "''/''", 'in/in', 'the/at', 'hard-fought/jj', 'primary/nn', 
+'which/wdt', 'was/bedz', 'won/vbn', 'by/in', 'Mayor-nominate/nn-tl', 'Ivan/np', 'Allen/np', 'Jr./np', './.', '``/``', 'Only/rb', 'a/at', 'relative/jj', 
+'handful/nn', 'of/in', 'such/jj', 'reports/nns', 'was/bedz', 'received/vbn', "''/''", ',/,', 'the/at', 'jury/nn', 'said/vbd', ',/,', '``/``', 'considering/in', 'the/at', 'widespread/jj', 'interest/nn', 'in/in', 'the/at', 'election/nn', ',/,', 'the/at', 'number/nn', 'of/in', 'voters/nns', 'and/cc', 'the/at', 'size/nn', 'of/in', 'this/dt', 'city/nn', "''/''", './.', 'The/at', 'jury/nn', 'said/vbd', 'it/pps', 'did/dod', 'find/vb', 'that/cs', 'many/ap', 'of/in', "Georgia's/np$"]
+
+>>> spl2[:150]
+['\n\n\tThe/at', 'Fulton/np-tl', 'County/nn-tl', 'Grand/jj-tl', 'Jury/nn-tl', 'said/vbd', 'Friday/nr', 'an/at', 'investigation/nn', 'of/in', "Atlanta's/np$", 'recent/jj', 'primary/nn', 'election/nn', 'produced/vbd', '``/``', 'no/at', 'evidence/nn', "''/''", 'that/cs', 'any/dti', 'irregularities/nns', 'took/vbd', 'place/nn', './.\n\n\n\tThe/at', 'jury/nn', 'further/rbr', 'said/vbd', 'in/in',
+'term-end/nn', 'presentments/nns', 'that/cs', 'the/at', 'City/nn-tl', 'Executive/jj-tl', 'Committee/nn-tl', ',/,', 'which/wdt', 'had/hvd', 'over-all/jj',
+ 'charge/nn', 'of/in', 'the/at', 'election/nn', ',/,', '``/``', 'deserves/vbz', 'the/at', 'praise/nn', 'and/cc', 'thanks/nns', 'of/in', 'the/at', 
+ 'City/nn-tl', 'of/in-tl', 'Atlanta/np-tl', "''/''", 'for/in', 'the/at', 'manner/nn', 'in/in', 'which/wdt', 'the/at', 'election/nn', 'was/bedz', 
+ 'conducted/vbn', './.\n\n\n\tThe/at', 'September-October/np', 'term/nn', 'jury/nn', 'had/hvd', 'been/ben', 'charged/vbn', 'by/in', 'Fulton/np-tl', 
+ 'Superior/jj-tl', 'Court/nn-tl', 'Judge/nn-tl', 'Durwood/np', 'Pye/np', 'to/to', 'investigate/vb', 'reports/nns', 'of/in', 'possible/jj', '``/``', 
+ 'irregularities/nns', "''/''", 'in/in', 'the/at', 'hard-fought/jj', 'primary/nn', 'which/wdt', 'was/bedz', 'won/vbn', 'by/in', 'Mayor-nominate/nn-tl', 
+ 'Ivan/np', 'Allen/np', 'Jr./np', './.\n\n\n\t``/``', 'Only/rb', 'a/at', 'relative/jj', 'handful/nn', 'of/in', 'such/jj', 'reports/nns', 'was/bedz', 'received/vbn', "''/''", ',/,', 'the/at', 'jury/nn', 'said/vbd', ',/,', '``/``', 'considering/in', 'the/at', 'widespread/jj', 'interest/nn', 'in/in', 'the/at', 'election/nn', ',/,', 'the/at', 'number/nn', 'of/in', 'voters/nns', 'and/cc', 'the/at', 'size/nn', 'of/in', 'this/dt', 'city/nn', "''/''", './.\n\n\n\tThe/at', 'jury/nn', 'said/vbd',
+'it/pps', 'did/dod', 'find/vb', 'that/cs', 'many/ap', 'of/in', "Georgia's/np$", 'registration/nn', 'and/cc', 'election/nn', 'laws/nns']
+
+# question 14
+>>> spl = spl[:100]
+>>> spl2 = spl2[:100]
+>>> spl_sort = spl.sort()
+>>> spl_sorted = sorted(spl2)
+>>> spl.sort()
+>>> spl
+["''/''", "''/''", "''/''", ',/,', ',/,', './.', './.', "Atlanta's/np$", 'Atlanta/np-tl', 'City/nn-tl', 'City/nn-tl', 'Committee/nn-tl', 'County/nn-tl', 'Court/nn-tl', 'Durwood/np', 'Executive/jj-tl', 'Friday/nr', 'Fulton/np-tl', 'Fulton/np-tl', 'Grand/jj-tl', 'Ivan/np', 'Judge/nn-tl', 'Jury/nn-tl', 'Mayor-nominate/nn-tl', 'Pye/np', 'September-October/np', 'Superior/jj-tl', 'The/at', 'The/at', 'The/at', '``/``', '``/``', '``/``', 'an/at', 'and/cc', 'any/dti', 'been/ben', 'by/in', 'by/in', 'charge/nn', 'charged/vbn', 'conducted/vbn', 'deserves/vbz', 'election/nn', 'election/nn', 'election/nn', 'evidence/nn', 'for/in', 'further/rbr', 'had/hvd', 'had/hvd', 'hard-fought/jj', 'in/in', 'in/in', 'in/in', 'investigate/vb', 'investigation/nn', 'irregularities/nns', 'irregularities/nns', 'jury/nn', 'jury/nn', 'manner/nn', 'no/at', 'of/in', 'of/in', 'of/in', 'of/in', 'of/in-tl', 'over-all/jj', 'place/nn', 'possible/jj', 'praise/nn', 'presentments/nns', 'primary/nn', 'primary/nn', 'produced/vbd', 'recent/jj', 'reports/nns', 'said/vbd', 'said/vbd', 'term-end/nn', 'term/nn', 'thanks/nns', 'that/cs', 'that/cs', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'to/to', 'took/vbd', 'was/bedz', 'was/bedz', 'which/wdt', 'which/wdt', 'which/wdt', 'won/vbn']
+>>> sorted(spl)
+["''/''", "''/''", "''/''", ',/,', ',/,', './.', './.', "Atlanta's/np$", 'Atlanta/np-tl', 'City/nn-tl', 'City/nn-tl', 'Committee/nn-tl', 'County/nn-tl', 'Court/nn-tl', 'Durwood/np', 'Executive/jj-tl', 'Friday/nr', 'Fulton/np-tl', 'Fulton/np-tl', 'Grand/jj-tl', 'Ivan/np', 'Judge/nn-tl', 'Jury/nn-tl', 'Mayor-nominate/nn-tl', 'Pye/np', 'September-October/np', 'Superior/jj-tl', 'The/at', 'The/at', 'The/at', '``/``', '``/``', '``/``', 'an/at', 'and/cc', 'any/dti', 'been/ben', 'by/in', 'by/in', 'charge/nn', 'charged/vbn', 'conducted/vbn', 'deserves/vbz', 'election/nn', 'election/nn', 'election/nn', 'evidence/nn', 'for/in', 'further/rbr', 'had/hvd', 'had/hvd', 'hard-fought/jj', 'in/in', 'in/in', 'in/in', 'investigate/vb', 'investigation/nn', 'irregularities/nns', 'irregularities/nns', 'jury/nn', 'jury/nn', 'manner/nn', 'no/at', 'of/in', 'of/in', 'of/in', 'of/in', 'of/in-tl', 'over-all/jj', 'place/nn', 'possible/jj', 'praise/nn', 'presentments/nns', 'primary/nn', 'primary/nn', 'produced/vbd', 'recent/jj', 'reports/nns', 'said/vbd', 'said/vbd', 'term-end/nn', 'term/nn', 'thanks/nns', 'that/cs', 'that/cs', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'the/at', 'to/to', 'took/vbd', 'was/bedz', 'was/bedz', 'which/wdt', 'which/wdt', 'which/wdt', 'won/vbn']
+
+# question 15
+15. ○ Explore the difference between strings and integers by typing the following at a
+Python prompt: "3" * 7 and 3 * 7. Try converting between strings and integers
+using int("3") and str(3).
+>>> x = "3" *7
+>>> x
+'3333333'
+>>> y = 3 * 7
+>>> y
+21
