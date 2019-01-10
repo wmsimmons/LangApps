@@ -415,3 +415,31 @@ for match in matches:
 return dets
 
 # question 8
+
+# question 9
+9.	def load(f):
+		f = open(f).read()
+		return f	
+
+	a. Use nltk.regexp_tokenize() to create a tokenizer that tokenizes the various
+	kinds of punctuation in this text. Use one multiline regular expression inline
+	comments, using the verbose flag (?x).
+	f = nltk.regexp_tokenize(f, r'')
+	
+	b. Use nltk.regexp_tokenize() to create a tokenizer that tokenizes the following
+	kinds of expressions: monetary amounts; dates; names of people and
+	organizations.
+	f = nltk.regexp_tokenize(f, r'')
+	
+# question 10
+10. [(word, len(word)) for word in sent]
+
+# question 11
+11. f = open('file.txt').read()
+		f = f.split(',')
+	
+# question 12
+12. s = ''
+	for letter in s:
+		print(letter)
+	
