@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<br>
+<br>
+<!-- <h3>Import a new lesson:</h3>
+<form class="md-form" action="{{ url_for('lesson_page') }}" method="POST" enctype="multipart/form-data">
+    <div class="file-field">
+      <div class="btn btn-primary btn-sm float-left">
+        <span>Choose files</span>
+        <input type="file" name=file accept=".pdf,.txt,.doc,image/*,audio/*" multiple>
+        <input type="submit" value="Upload">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>
+  </form> -->
+
+  <form class="md-form" action="{{ url_for('lesson_page') }}" method="POST" enctype="multipart/form-data">
+    <div class="file-field">
+      <div class="btn btn-primary btn-sm float-left">
+        <span>Choose files</span>
+        <input type="file" name=file accept=".pdf,.txt,.doc,image/*,audio/*" multiple>
+        <input type="submit" value="Upload">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>
+  </form>
+
+  
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% for message in get_flashed_messages() %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+ 
+{% block content %}
+<h3>LangFeed - Linguistics and Language at your fingertips.</h3><br>
+
+  <ul id="accounts"> 
+    {% for acct in all_accounts -%}
+        {{ acct }}
+    {%- endfor %}
+    </ul>
+
+{% endblock %}

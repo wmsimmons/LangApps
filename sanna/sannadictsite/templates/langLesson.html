@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <h1>Your lesson</h1>    
+
+            <audio controls="controls" autoplay="autoplay" src="static/audio_files/{{ audio }}"></audio>
+                <h4>test</h4>
+
+    {% for f in files %}
+
+        {% if f.content_type.startswith('text/') %}
+            {{ new_lesson[:1000] }}
+        {% endif %}
+
+    {% endfor %}
+
+
+{% endblock %}
