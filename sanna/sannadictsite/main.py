@@ -139,9 +139,14 @@ def allowed_file(filename):
 def import_lesson():
     
     return render_template('importLesson.html')
-
+0
 @app.route('/lesson', methods=['GET', 'POST'])
 def lesson_page():
+    app.config['MONGO_DBNAME'] = 'langilsna'
+    app.config['MONGO_URI'] = 'mongodb://papahana:k5eCDUUAXETk=!XpjQRm4NS4p%RBU^AN5Lp@ds133166.mlab.com:33166/langilsna'
+    db = mongo.db.nouns
+    entry = db.find_one({"word":word})
+
     target = os.path.join(APP_ROOT, 'static/audio_files/')
     print(target)
 
@@ -164,7 +169,7 @@ def lesson_page():
             with open(destination) as f:
                 new_lesson = f.read()
 
-    return render_template('langLesson.html', files=files, new_lesson=new_lesson, audio=audio)
+    return render_template('langLesson.html', files=files, new_lesson=new_lesson, audio=audio, entry=entry)
 
 # for the audio module on langLesson.html/audio for lessons
 class langLesson(views.MethodView):
