@@ -7,7 +7,7 @@
 
 - Future versions of this site will include a separate application within, that allows the user to import custom language lessons + corresponding audio, with the ability to track progress for each word, grammar concept, etc.
 
-### 2. A small, completed practice mongoDB project with 87 Maltese verbs, using PyMongo, see /malteseVerbsMongoDB/readme.md for more info
+### 2. A small, completed practice mongoDB project with 87 Maltese verbs, using PyMongo.
 
 ### 3. Sanna 
 
