@@ -1,6 +1,6 @@
 # LangApps
 
-## This repository currently contains four seperate applications:
+## This repository currently contains four separate applications:
 
 ### 1. LangMap 
 - An Angular + agm application currently in the works that displays a world map and allows the user to see stats for languages in a separate panel.
