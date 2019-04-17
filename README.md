@@ -1,23 +1,8 @@
-# LangApps
+# Original2017LangShack
 
 ## This repository currently contains four separate applications:
 
-### 1. LangMap 
-- An Angular + agm application currently in the works that displays a world map and allows the user to see stats for languages in a separate panel.
-
-- Future versions of this site will include a separate application within, that allows the user to import custom language lessons + corresponding audio, with the ability to track progress for each word, grammar concept, etc.
-
-### 2. A small, completed practice mongoDB project with 87 Maltese verbs, using PyMongo.
-
-### 3. Sanna 
-
-- A dictionary application for the Sanna/Cypriot Maronite Arabic language, written in Python's Flask
-
-- Database schema & data are complete, need to mongoimport dictionary data in a mongo database and finish the project
-
-- To be hosted on Heroku summer 2019.
-
-### 4. LangShack
+### 1. LangShack
 - Currently hosting the original version of my official website, written in Python's Django.
 
 - LangShack is currently being redesigned and will host numerous Python and Angular applications in the future.
