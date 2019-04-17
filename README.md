@@ -1,7 +1,5 @@
 # Original2017LangShack
 
-## This repository currently contains four separate applications:
-
 ### 1. LangShack
 - Currently hosting the original version of my official website, written in Python's Django.
 
